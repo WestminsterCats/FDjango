@@ -14,12 +14,12 @@ Welcome to the Westminster University Lending System! This Django project aims t
 
 1. Clone the repository:
     ```
-    git clone https://github.com/your_username/westminster-lending-system.git
+    git clone https://github.com/your_username/FDijango.git
     ```
 
 2. Navigate to the project directory:
     ```
-    cd westminster-lending-system
+    cd FDjango
     ```
 
 3. Create a virtual environment:
