@@ -1,24 +1,35 @@
+<!-- Created by Sanjeed Akanjee W19478052 -->
 
 {% load static %}
 {% block content %}
+<!-- i have to include different css for different pages therefore this goes here-->
+<link rel="stylesheet" href="{% static '/login/css/stylesheet.css' %}">
 <input type="hidden" value="frame-6">
 <div class="container-center-horizontal">
     <div class="frame-6 screen">
+        <!-- Background image -->
         <div class="rectangle-1-MzyH1D"></div>
         <img class="x2024-02-20_01-02-26-sd_xl_base_10_0-1-MzyH1D" src="{% static '/images/background.png' %}"
             alt="2024-02-20_01-02-26-sd_xl_base_1.0_0 1">
+        
+        <!-- Login Form -->
         <form id="loginForm" method="post" action="{% url 'login_user' %}">
             {% csrf_token %}
             <div class="group-7-MzyH1D">
                 <div class="group-6-IDQw7e">
+                    <!-- Username Input -->
                     <div class="rectangle-11-EbI7qj"></div>
-                    <img class="rectangle-11-b2kWkm" src="{% static '/images/rectangle-11.svg' %}" alt="Username">
+                    <img class="rectangle-11-b2kWkm" src="{% static '/images/textBox.svg' %}" alt="Username">
                     <input type="text" name="username" class="rectangle-11-b2kWkm">
                     <div class="username-EbI7qj inter-medium-san-juan-30px">Username</div>
+                    
+                    <!-- Password Input -->
                     <div class="password inter-medium-san-juan-30px">Password</div>
                     <input type="password" name="password" class="rectangle-12-EbI7qj">
                     <h1 class="title-EbI7qj">LOGIN</h1>
                 </div>
+                
+                <!-- Login Options -->
                 <div class="frame-15-IDQw7e">
                     <div class="frame-10-221oxM">
                         <div class="component-1-2EphtB">
@@ -30,16 +41,20 @@
                         <button type="submit" class="login-n5z8fq">LOGIN</button>
                     </div>
                     <div class="frame-6-221oxM">
-                        <div class="sign-up-RtgI4o inter-light-william-24px">sign-up</div>
-                        <div class="admin-login-RtgI4o inter-light-william-24px">admin login</div>
-                        <img class="vector-2-RtgI4o" src="{% static '/images/vector-2.svg' %}" alt="Vector 2"><img
-                            class="vector-3-RtgI4o" src="{% static '/images/vector-3.svg' %}" alt="Vector 3">
+                        <!-- Sign-up and Admin Login Options -->
+                        <a href="#" class="sign-up-RtgI4o inter-light-william-24px">sign-up</a>
+                        <!-- Put under div as css didnt work for the hyperlink-->
+                        <div class = "admin-login-RtgI4o">
+                            <a href="#" class=" inter-light-william-24px">admin login</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </form>
-        <img class="rectangle-4-MzyH1D" src="{% static '/images/rectangle-4.svg' %}" alt="Rectangle 4">
-        <img class="skbau-logos_white-2-MzyH1D" src="{% static '/images/logo.png' %}" alt="SKBAU-logos_white 2">
+        
+        <!-- NavBar -->
+        <img class="rectangle-4-MzyH1D" src="{% static '/images/navBar.svg' %}" alt="Rectangle 4">
+        <img class="skbau-logos_white-2-MzyH1D" src="{% static 'images/logo.png' %}" alt="SKBAU-logos_white 2">
         <img class="group-MzyH1D" src="{% static '/images/mtPeak.png' %}" alt="Group">
     </div>
 </div>

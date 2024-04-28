@@ -15,4 +15,7 @@ def login_user(request):
             messages.error(request, 'Error logging in user, please try again.')
             return redirect('login')  # replace 'login' with the name of your login view
     else:   
-        return render(request, 'login\main.html', {})
+        return render(request, 'login/main.html', {})
+    
+def signup_page(request):
+    return render(request, 'login/signup.html')

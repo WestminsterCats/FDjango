@@ -306,6 +306,7 @@ input:focus {
 }
 
 .frame-6 .login-n5z8fq:hover {
+    color: var(--san-juan);
     background-color: #cbe4de;
 }
 
@@ -328,6 +329,7 @@ input:focus {
     text-align: left;
     text-shadow: 0 4px 4px #00000040;
     width: 87px;
+    text-decoration: underline;
 }
 
 .frame-6 .admin-login-RtgI4o {
@@ -335,7 +337,7 @@ input:focus {
     height: 40px;
     letter-spacing: 0;
     line-height: normal;
-    margin-right: -31.88px;
+    margin-right: -30px;
     margin-top: -1.00px;
     position: relative;
     text-align: left;
@@ -356,7 +358,7 @@ input:focus {
 .frame-6 .vector-3-RtgI4o {
     background-color: transparent;
     height: 9px;
-    left: 118px;
+    left: 120px;
     object-fit: cover;
     position: absolute;
     top: 24px;
