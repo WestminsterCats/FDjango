@@ -1,0 +1,136 @@
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1920, maximum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'userdashboard/css/stylesheet.css' %}">
+</head>
+
+<body style="margin: 0px; background: rgb(255, 255, 255); overflow-x: hidden;" dark-scroll="">
+    <div class="container-center-horizontal">
+        <div class="user-dashboard screen " data-id="83:2312">
+            <div class="group-37-YP10aS" data-id="197:409">
+                <div class="navbar-jOU7fs" data-id="126:94"><img class="logo-UiRxrZ" data-id="126:100"
+                        src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/66040a3b644e4d73737c7c0b/img/skbau-logos-white-2.png"
+                
+                        alt="Logo">
+                    <div class="group-17-UiRxrZ" data-id="126:96">
+                        <h1 class="title-Dh2QQ3" data-id="126:97">{{ user.first_name }}'s Dashboard</h1>
+                    </div>
+                </div><img class="vector-2-jOU7fs" data-id="197:366"
+                    src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/661fb38621aaa22c83368e1c/img/vector-2-2.svg"
+                    alt="Vector 2"><img class="ellipse-1-jOU7fs" data-id="197:367"
+                    src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/6626a4fbac63a172df60b996/img/ellipse-1.png"
+                    
+                    alt="Ellipse 1">
+                <a href="{% url 'signout' %}"><div class="logout-jOU7fs" data-id="197:368">Logout</div> </a>
+            </div>
+            <p class="manage-password-email-and-mobile-number-YP10aS worksans-light-black-36px" data-id="156:542">Manage
+                password, email and mobile number</p>
+            <div class="account-security-YP10aS" data-id="156:524">Account Security</div>
+            <a href = {% url 'orders' %}>
+                <div class="group-18-YP10aS" data-id="156:532">
+                <div class="rectangle-1-adsUXr rectangle-1" data-id="156:531"></div>
+                <div class="orders-adsUXr worksans-normal-black-50px" data-id="156:299">Orders</div>
+                <p class="track-return-cancel-adsUXr worksans-light-black-36px" data-id="156:528">Track, return, cancel
+                    an order or borrow again</p><img class="online-shopping-adsUXr" data-id="156:530"
+                    src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/661fb38621aaa22c83368e1c/img/online-shopping-2@2x.png"
+                    alt="Online Shopping">
+            </div>
+            </a>
+
+            <a href = {% url 'cart' %}>
+                <div class="group-19-YP10aS" data-id="156:535">
+                <div class="rectangle-1-sDWoJz rectangle-1" data-id="156:536"></div>
+                <div class="shopping-cart-sDWoJz worksans-normal-black-50px" data-id="156:537">Shopping Cart</div>
+                <p class="check-whats-in-your-sDWoJz worksans-light-black-36px" data-id="156:538">Check what’s in your
+                    basket, finalize your order</p>
+            </div>
+
+            <a href={% url 'equipment' %}>
+                <div class="group-36-YP10aS" data-id="162:181">
+                <div class="rectangle-1-hGxxyi rectangle-1" data-id="162:182"></div>
+                <div class="browse-products-hGxxyi worksans-normal-black-50px" data-id="162:183">Browse Products</div>
+                <p class="find-the-gear-you-ne-hGxxyi worksans-light-black-36px" data-id="162:184">Find the Gear You
+                    Need, Browse &amp; Request Equipment.</p>
+            </div>
+            </a>
+            
+            <a href="{% url 'reservations' %}">
+                <div class="group-20-YP10aS" data-id="157:98">
+                <div class="rectangle-1-WxglxK rectangle-1" data-id="157:99"></div>
+                <div class="upcoming-reservations-WxglxK worksans-normal-black-50px" data-id="157:100">Upcoming <br>
+                    Reservations</div>
+                <div class="check-your-reservations-WxglxK worksans-light-black-36px" data-id="157:101">Check your
+                    reservations</div>
+            </div>
+            </a>
+            <a href="{%url 'currentholdings' %}">
+                <div class="group-21-YP10aS" data-id="157:104">
+                <div class="rectangle-1-oxyXvv rectangle-1" data-id="157:105"></div>
+                <div class="current-holdings-oxyXvv worksans-normal-black-50px" data-id="157:106">Current Holdings</div>
+                <p class="check-what-you-shoul-oxyXvv worksans-light-black-36px" data-id="157:107">Check what you should
+                    have in current possession of</p>
+            </div>
+            </a>
+            
+            <div class="group-35-YP10aS" data-id="161:175">
+                <div class="rectangle-4-vhxgPb" data-id="161:148"></div>
+                <div class="rectangle-5-vhxgPb" data-id="161:149"></div>
+                <div class="rectangle-6-vhxgPb" data-id="161:150"></div>
+                <div class="rectangle-8-vhxgPb" data-id="161:152"></div>
+                <div class="rectangle-9-vhxgPb" data-id="161:153"></div>
+                <div class="rectangle-3-vhxgPb" data-id="160:126"></div>
+                <div class="group-34-vhxgPb" data-id="161:174">
+                    <div class="name-jhon-doe-EdWV5r worksans-light-black-36px" data-id="160:118">Name<br>{{ user.first_name }} {{ user.last_name }}</div>
+                    <div class="group-27-EdWV5r" data-id="161:158">
+                        <div class="rectangle-15" data-id="161:159"></div>
+                        <div class="group-15" data-id="161:160">
+                            <div class="edit worksans-normal-black-28px" data-id="161:161">Edit</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-33-vhxgPb" data-id="161:173">
+                    <div class="emailw1234567mywestminsteracuk-AQbrKs worksans-light-black-36px" data-id="160:120">
+                        Email<br>{{ user.email }}</div>
+                    <div class="group-26-AQbrKs" data-id="161:154">
+                        <div class="rectangle-15" data-id="161:155"></div>
+                        <div class="group-15" data-id="161:156">
+                            <div class="edit worksans-normal-black-28px" data-id="161:157">Edit</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-31-vhxgPb" data-id="161:171">
+                    <div class="password-4ksQdQ worksans-light-black-36px" data-id="160:122">Password<br>**********
+                    </div>
+                    <div class="group-28-4ksQdQ" data-id="161:162">
+                        <div class="rectangle-15" data-id="161:163"></div>
+                        <div class="group-15" data-id="161:164">
+                            <div class="edit worksans-normal-black-28px" data-id="161:165">Edit</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-30-vhxgPb" data-id="161:170">
+                    <p class="primary-mobile-numbe-DNgAsZ worksans-light-black-36px" data-id="160:121"><span
+                            class="span0-nfWQ29 worksans-light-black-36px">Alerts<br>Current overdue equipment:<br></span>0<span class="span1-nfWQ29"></span></p>
+                    <div class="group-25-DNgAsZ" data-id="161:144">
+                        <div class="rectangle-15" data-id="161:145"></div>
+                        <div class="group-15" data-id="161:146">
+                            <div class="edit worksans-normal-black-28px" data-id="161:147">Edit</div>
+                        </div>
+                    </div>
+                </div>
+            </div><img class="reserve-YP10aS" data-id="157:108"
+                src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/661fb38621aaa22c83368e1c/img/reserve-2@2x.png"
+                alt="Reserve"><img class="holding-box-YP10aS" data-id="157:109"
+                src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/6626a4fbac63a172df60b996/img/holding-box.png"
+                alt="Holding Box"><img class="add-to-basket-YP10aS" data-id="162:185"
+                src="https://cdn.animaapp.com/projects/660409fd98d63f4f05f6985a/releases/661fb38621aaa22c83368e1c/img/add-to-basket-2@2x.png"
+                alt="Add to Basket">
+        </div>
+    </div>
+</body>
+
+</html>

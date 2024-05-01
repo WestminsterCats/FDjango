@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Style -->
+
+    <style>
+        .box {
+            position: relative;
+            width: 1920px;
+            height: 150px;
+        }
+
+        .box .navbar {
+            position: fixed;
+            width: 1920px;
+            height: 150px;
+            top: 0;
+            left: 0;
+            background-color: #436f6f;
+        }
+
+        .box .group {
+            position: absolute;
+            width: 392px;
+            height: 90px;
+            top: 30px;
+            left: 1409px;
+        }
+
+        .box .text-wrapper {
+            position: absolute;
+            width: 277px;
+            top: 0;
+            left: 0;
+            font-family: "Work Sans-Regular", Helvetica;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 40px;
+            text-align: right;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+
+        .box .overlap-group {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            top: 0;
+            left: 300px;
+            border-radius: 45px;
+        }
+
+        .box .vector {
+            position: absolute;
+            width: 27px;
+            height: 53px;
+            top: 18px;
+            left: 32px;
+        }
+
+        .box .ellipse {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            top: 0;
+            left: 0;
+            border-radius: 45px;
+            border: 2px solid;
+            border-color: #ffffff;
+        }
+
+        .box .logo {
+            position: absolute;
+            width: 109px;
+            height: 109px;
+            top: 30px;
+            left: 70px;
+            object-fit: cover;
+        }
+    </style>
+
+    <!-- Navbar code -->
+    
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    {% load static %}
+    <body>
+        <div class="box">
+            <div class="navbar">
+                <div class="group">
+                    <div class="text-wrapper">Back To Dashboard</div>
+                    <a href="{% url 'index' %}" style="text-decoration: none; color: white;">
+                        <div class="overlap-group">
+                            <img class="vector" src="{% static 'equipment\Vector 2.png' %}"  alt="arrow"/>
+                            <div class="ellipse"></div>
+                        </div>
+                    </a>
+                </div>
+                <a href="{% url 'home' %}" style="text-decoration: none; color: white;">
+                    <img class="logo" src="{% static 'equipment/skbau-logos-white-2.png' %}" alt="logo" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

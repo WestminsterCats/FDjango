@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="{% static 'order/css/stylesheet.css' %}">
+</head>
+<body>
+    <div class="header">
+        <a href={% url 'index' %} id="backButton">Back</a>
+        <h1>Orders</h1>
+    </div>
+    <div class="orders">
+        <div class="order">
+            <div class="order-info">
+                <div class="image-placeholder"></div>
+                <p>MacBook Pro (13-inch, M2, 2022)</p>
+            </div>
+            <div class="order-details">
+                <span>Order placed xx/xx/xx</span>
+                <span>Lent to Jhon Doe</span>
+                <span>Order #204-3193526-5353905</span>
+                <div class="buttons">
+                    <button onclick="orderAgain()">Order Again</button>
+                    <button onclick="returnOrder()">Return</button>
+                    <button onclick="help()">Help</button>
+                </div>
+            </div>
+        </div>
+        <div class="order">
+            <div class="order-info">
+                <div class="image-placeholder"></div>
+                <p>Dell XPS 13 9315 Laptop, 12th Gen Intel Evo Core i7-1250U, 13.4 Inch UHD+ 500nit Touchscreen, 16GB RAM, 512GB SSD, Backlit Keyboard, Fingerprint Reader, Win 11H (Sky)</p>
+            </div>
+            <div class="order-details">
+                <span>Order placed xx/xx/xx</span>
+                <span>Lent to Jhon Doe</span>
+                <span>Order #204-3193526-5353905</span>
+                <div class="buttons">
+                    <button onclick="orderAgain()">Order Again</button>
+                    <button onclick="returnOrder()">Return</button>
+                    <button onclick="help()">Help</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

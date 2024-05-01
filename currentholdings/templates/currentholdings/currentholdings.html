@@ -1,0 +1,50 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Holdings</title>
+    <link rel="stylesheet" href="{% static 'currentholdings/css/stylesheet.css' %}">
+</head>
+<body>
+    <div class="header">
+        <button id="backButton">Back</button>
+        <h1>Current Holdings</h1>
+    </div>
+    <div class="holdings">
+        <div class="holding">
+            <div class="image-placeholder"></div>
+            <p>MacBook Pro (13-inch, M2, 2022)</p>
+            <div class="actions">
+                <button onclick="returnItem()">Return</button>
+                <button onclick="extendDue()">Extend</button>
+            </div>
+            <span>Due in: 2 days</span>
+        </div>
+        <div class="holding">
+            <div class="image-placeholder"></div>
+            <p>Dell XPS 13 9315 Laptop, 12th Gen Intel Evo Core i7-1250U, 13.4 Inch UHD+ 500nit Touchscreen, 16GB RAM, 512GB SSD, Backlit Keyboard, Fingerprint Reader, Win 11H (Sky)</p>
+            <div class="actions">
+                <button onclick="returnItem()">Return</button>
+                <button onclick="extendDue()">Extend</button>
+            </div>
+            <span>Due in: 23 days</span>
+        </div>
+    </div>
+    <script>
+        function returnItem() {
+            alert("Returning item. Please follow the instructions to ship back the item.");
+        }
+        
+        function extendDue() {
+            alert("Extending the due date. Please confirm the new due date.");
+        }
+        
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+        
+    </script>
+</body>
+</html>

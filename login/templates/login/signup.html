@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'signup/css/stylesheet.css' %}">
+</head>
+<body>
+<div class="frame">
+    <div class="overlap-wrapper">
+        <div class="overlap">
+            <img class="background" src="{% static 'images/background.png' %}" />
+            <div class="sign-up-block">
+                <div class="overlap-group">
+                    <div class="text-wrapper">SIGN UP</div>
+                    <div class="links">
+                        <a href="{% url 'login_user' %}" class="div">login</a>
+                        <a href="{% url 'admin' %}" class="text-wrapper-2">admin login</a>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="right-field">
+                            <div class="div-2">
+                                <div class="text-wrapper-3">Username</div>
+                                <input type="text" name="username" class="img-2">
+                            </div>
+                            <div class="div-2">
+                                <div class="text-wrapper-4">Password</div>
+                                <input type="password" name="password" class="img-2">
+                            </div>
+                            <div class="div-2">
+                                <div class="text-wrapper-4">Confirm Password</div>
+                                <input type="password" name="confirm_password" class="img-2">
+                            </div>
+                        </div>
+                        <div class="left-field">
+                            <div class="div-2">
+                                <div class="text-wrapper-3">First Name</div>
+                                <input type="text" name="first_name" class="img-2">
+                            </div>
+                            <div class="div-2">
+                                <div class="text-wrapper-4">Last Name</div>
+                                <input type="text" name="last_name" class="img-2">
+                            </div>
+                            <div class="div-2">
+                                <div class="text-wrapper-4">Email</div>
+                                <input type="email" name="email" class="img-2">
+                            </div>
+                        </div>
+                        <button type = "submit" class="sign-up-button">
+                            <div class="div-wrapper">
+                                <div class="text-wrapper-5">SIGN UP</div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- NavBar -->
+            <img class="nav-bar" src="{% static 'images/navBar.svg' %}" />
+            <img class="logo" src="{% static 'images/logo.png' %}" />
+            <img class="mt-peak" src="{% static 'images/mtPeak.png' %}" />
+        </div>
+    </div>
+</div>
+</body>
+</html>

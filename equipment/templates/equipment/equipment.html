@@ -1,0 +1,165 @@
+{% extends "equipment/main.html" %}
+
+{% block content %}
+
+<!-- Style -->
+
+<style>
+    .table-container {
+        margin: 20px;
+    }
+    .table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .header-row {
+        display: table-row;
+        font-weight: bold;
+        background-color: #436f6f;
+        color: white;
+        cursor: pointer; /* Add cursor pointer to indicate clickable header */
+    }
+    .row {
+        display: table-row;
+    }
+    .row:nth-child(even) {
+        background-color: #c9c9c991;
+    }
+    .cell {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    #search-input {
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+</style>
+
+<!-- Filter options -->
+
+<div>
+    <label for="availability-filter">Availability:</label>
+    <select id="availability-filter" onchange="handleFilter()">
+        <option value="All">All</option>
+        {% for quantity in unique_quantities %}
+            <option value="{{ quantity }}">{{ quantity }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="item-type-filter">Item Type:</label>
+    <select id="item-type-filter" onchange="handleFilter()">
+        <option value="All">All</option>
+        {% for item_type in unique_item_types %}
+            <option value="{{ item_type }}">{{ item_type }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<!-- Table -->
+
+<input type="text" id="search-input" placeholder="Search...">
+<div class="table-container">
+    <h1>Equipment List </h1>
+    <div class="table">
+        <div class="row header-row">
+            <div class="cell" onclick="sortTable(0)">Device ID</div>
+            <div class="cell" onclick="sortTable(1)">Device Name</div>
+            <div class="cell" onclick="sortTable(2)">Device Type</div>
+            <div class="cell" onclick="sortTable(3)">Quantity</div>
+            <div class="cell" onclick="sortTable(4)">Audit</div>
+            <div class="cell" onclick="sortTable(5)">Location</div>
+            <div class="cell" onclick="sortTable(6)">Status</div>
+            <div class="cell" onclick="sortTable(7)">Comments</div>
+        </div>
+        {% for item in item %}
+        <div class="row">
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.id }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.name }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.itemtype }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.quantity }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.audit }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.itemlocation }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.itemstatus }}</a></div>
+            <div class="cell"><a href="{% url 'itempage' item.id %}">{{ item.comments }}</a></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Search functionality -->
+
+<script>
+    document.getElementById('search-input').addEventListener('input', function () {
+        var filter = this.value.toUpperCase();
+        var rows = document.querySelectorAll('.row');
+        rows.forEach(function(row) {
+            if (!row.classList.contains('header-row')) { // Exclude header row from search
+                var cells = row.querySelectorAll('.cell');
+                var found = false;
+                cells.forEach(function(cell) {
+                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                });
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Filter functionality -->
+
+<script>
+    function handleFilter() {
+        var availability = document.getElementById('availability-filter').value;
+        var itemType = document.getElementById('item-type-filter').value;
+
+        var rows = document.querySelectorAll('.row');
+        rows.forEach(function(row) {
+            if (!row.classList.contains('header-row')) {
+                var rowAvailability = row.querySelector('.cell:nth-child(4)').textContent.trim();
+                var rowItemType = row.querySelector('.cell:nth-child(3)').textContent.trim();
+
+                var showRow = (availability === 'All' || rowAvailability === availability) &&
+                              (itemType === 'All' || rowItemType === itemType);
+
+                row.style.display = showRow ? '' : 'none';
+            }
+        });
+    }
+</script>
+
+<!-- Sorting functionality -->
+
+<script>
+    function sortTable(columnIndex) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.querySelector('.table');
+        switching = true;
+        while (switching) {
+            switching = false;
+            rows = table.querySelectorAll('.row');
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].querySelectorAll('.cell')[columnIndex].textContent.trim();
+                y = rows[i + 1].querySelectorAll('.cell')[columnIndex].textContent.trim();
+                if (x.toLowerCase() > y.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+</script>
+
+{% endblock content %}

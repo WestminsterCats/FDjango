@@ -1,0 +1,91 @@
+{%extends "equipment/main.html"%}
+
+{% block content %}
+
+<!-- Style -->
+
+<style>
+    .table-container {
+        margin: 20px;
+    }
+    .table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .header-row {
+        display: table-row;
+        font-weight: bold;
+        background-color: #436f6f;
+        color: white;
+    }
+    .row {
+        display: table-row;
+    }
+    .cell {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    .back-button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+</style>
+
+<!-- Item table -->
+
+<div class="table-container">
+    <h1>Selected Item: </h1>
+    <div class="table">
+        <div class="row header-row">
+            <div class="cell">Item Name</div>
+            <div class="cell">Item Type</div>
+            <div class="cell">Quantity</div>
+            <div class="cell">Audit</div>
+            <div class="cell">Location</div>
+            <div class="cell">Status</div>
+            <div class="cell">Comments</div>
+            <div class="cell">Added</div>
+        </div>
+        <div class="row">
+            <div class="cell">{{listitem.name}}</div>
+            <div class="cell">{{listitem.itemtype}}</div>
+            <div class="cell">{{listitem.quantity}}</div>
+            <div class="cell">{{listitem.audit}}</div>
+            <div class="cell">{{listitem.itemlocation}}</div>
+            <div class="cell">{{listitem.itemstatus}}</div>
+            <div class="cell">{{listitem.comments}}</div>
+            <div class="cell">{{listitem.created}}</div>
+        </div>
+        <div class="back-button-container">
+            <a href="/equipment" class="btn btn-secondary">Back to Equipment</a>
+        </div>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Reservation form and button -->
+
+    <div>
+        <h2>Fill out to reserve:</h2>
+        <form class="reservation-form" method="POST" action="{% url 'reserve_item' %}">
+            {% csrf_token %}
+            <input type="hidden" name="item_id" value="{{ listitem.id }}">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ request.user.first_name }}" required><br><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ request.user.last_name }}" required><br><br>
+            {% if listitem.itemstatus.status == "On_loan" %}
+                <button type="button" disabled>Not available - On loan</button>
+            {% elif listitem.itemstatus.status == "Repairing" %}
+                <button type="button" disabled>Not available - Repairing</button>
+            {% elif listitem.itemstatus.status == "Decommisioned " %}
+                <button type="button" disabled>Not available - Decommisioned</button>
+            {% else %}
+                <button type="submit">Reserve</button>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
