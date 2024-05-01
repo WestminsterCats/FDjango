@@ -15,8 +15,9 @@ def index(request):
 
     return render(request, 'userdashboard/userdashboard.html',context)
 
-def logout_view(request):
-    return logout(request)
+def signout_view(request):
+    logout(request) 
+    return redirect(reverse_lazy('login_user'))
 
 #to be filled out with the rest of the pages
 def equipment(request):

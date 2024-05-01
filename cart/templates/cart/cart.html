@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <button id="backButton">Back</button>
+        <h1>Shopping Cart</h1>
+    </div>
+    <div class="cart">
+        <div class="item">
+            <div class="image-placeholder"></div>
+            <p>MacBook Pro (13-inch, M2, 2022)</p>
+            <div class="actions">
+                <button onclick="removeItem(this)">Remove</button>
+                <button onclick="cancelAction()">Cancel</button>
+            </div>
+            <span>Lend Length: 14 days</span>
+        </div>
+        <div class="item">
+            <div class="image-placeholder"></div>
+            <p>Dell XPS 13 9315 Laptop, 12th Gen Intel Evo Core i7-1250U, 13.4 Inch UHD+ 500nit Touchscreen, 16GB RAM, 512GB SSD, Backlit Keyboard, Fingerprint Reader, Win 11H (Sky)</p>
+            <div class="actions">
+                <button onclick="removeItem(this)">Remove</button>
+                <button onclick="cancelAction()">Cancel</button>
+            </div>
+            <span>Lend Length: 14 days</span>
+        </div>
+    </div>
+    <button id="checkoutButton">Checkout</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
