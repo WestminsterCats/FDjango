@@ -25,12 +25,3 @@ def equipment(request):
 
 def reservations(request):
     return redirect('/equipment/reservations')
-
-def page3(request):
-    return render(request, 'your_app_name/page3.html')
-
-def page4(request):
-    return render(request, 'your_app_name/page4.html')
-
-def page5(request):
-    return render(request, 'your_app_name/page5.html')
