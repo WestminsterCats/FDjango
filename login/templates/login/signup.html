@@ -16,8 +16,8 @@
                 <div class="overlap-group">
                     <div class="text-wrapper">SIGN UP</div>
                     <div class="links">
-                        <a href="#" class="div">login</a>
-                        <a href="#" class="text-wrapper-2">admin login</a>
+                        <a href="{% url 'login_user' %}" class="div">login</a>
+                        <a href="{% url 'admin' %}" class="text-wrapper-2">admin login</a>
                     </div>
                     <form method="post">
                         {% csrf_token %}

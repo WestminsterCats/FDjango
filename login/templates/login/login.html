@@ -1,61 +1,72 @@
 <!-- Created by Sanjeed Akanjee W19478052 -->
 
 {% load static %}
-{% block content %}
-<!-- i have to include different css for different pages therefore this goes here-->
-<link rel="stylesheet" href="{% static '/login/css/stylesheet.css' %}">
-<input type="hidden" value="frame-6">
-<div class="container-center-horizontal">
-    <div class="frame-6 screen">
-        <!-- Background image -->
-        <div class="rectangle-1-MzyH1D"></div>
-        <img class="x2024-02-20_01-02-26-sd_xl_base_10_0-1-MzyH1D" src="{% static '/images/background.png' %}"
-            alt="2024-02-20_01-02-26-sd_xl_base_1.0_0 1">
-        
-        <!-- Login Form -->
-        <form id="loginForm" method="post" action="{% url 'login_user' %}">
-            {% csrf_token %}
-            <div class="group-7-MzyH1D">
-                <div class="group-6-IDQw7e">
-                    <!-- Username Input -->
-                    <div class="rectangle-11-EbI7qj"></div>
-                    <img class="rectangle-11-b2kWkm" src="{% static '/images/textBox.svg' %}" alt="Username">
-                    <input type="text" name="username" class="rectangle-11-b2kWkm">
-                    <div class="username-EbI7qj inter-medium-san-juan-30px">Username</div>
-                    
-                    <!-- Password Input -->
-                    <div class="password inter-medium-san-juan-30px">Password</div>
-                    <input type="password" name="password" class="rectangle-12-EbI7qj">
-                    <h1 class="title-EbI7qj">LOGIN</h1>
-                </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+        <!-- i have to include different css for different pages therefore this goes here-->
+        <link rel="stylesheet" href="{% static '/login/css/stylesheet.css' %}">
+        <input type="hidden" value="frame-6">
+        <div class="container-center-horizontal">
+            <div class="frame-6 screen">
+                <!-- Background image -->
+                <div class="rectangle-1-MzyH1D"></div>
+                <img class="background" src="{% static '/images/background.png' %}" alt="background">
                 
-                <!-- Login Options -->
-                <div class="frame-15-IDQw7e">
-                    <div class="frame-10-221oxM">
-                        <div class="component-1-2EphtB">
-                            <div class="rectangle-14-WxrPxz rectangle-14"></div>
+                <!-- Login Form -->
+                <form id="loginForm" method="post" action="{% url 'login_user' %}">
+                    {% csrf_token %}
+                    <div class="group-7-MzyH1D">
+                        <div class="group-6-IDQw7e">
+                            <!-- Username Input -->
+                            <div class="rectangle-11-EbI7qj"></div>
+                            <img class="rectangle-11-b2kWkm" src="{% static '/images/textBox.svg' %}" alt="Username">
+                            <input type="text" name="username" class="rectangle-11-b2kWkm">
+                            <div class="username-EbI7qj inter-medium-san-juan-30px">Username</div>
+                            
+                            <!-- Password Input -->
+                            <div class="password inter-medium-san-juan-30px">Password</div>
+                            <input type="password" name="password" class="rectangle-12-EbI7qj">
+                            {% if error %}
+                                <h1 class="error-message">{{ error }}</h1>
+                            {% endif %}
+                            <h1 class="title-EbI7qj">LOGIN</h1>
                         </div>
-                        <div class="remember-me-2EphtB inter-light-william-24px">remember me</div>
-                    </div>
-                    <div class="group-9-221oxM">
-                        <button type="submit" class="login-n5z8fq">LOGIN</button>
-                    </div>
-                    <div class="frame-6-221oxM">
-                        <!-- Sign-up and Admin Login Options -->
-                        <a href="#" class="sign-up-RtgI4o inter-light-william-24px">sign-up</a>
-                        <!-- Put under div as css didnt work for the hyperlink-->
-                        <div class = "admin-login-RtgI4o">
-                            <a href="#" class=" inter-light-william-24px">admin login</a>
+                        
+                        <!-- Login Options -->
+                        <div class="frame-15-IDQw7e">
+                            <div class="frame-10-221oxM">
+                                <div class="component-1-2EphtB">
+                                    <div class="rectangle-14-WxrPxz rectangle-14"></div>
+                                </div>
+                                <div class="remember-me-2EphtB inter-light-william-24px" >remember me</div>
+                            </div>
+                            <div class="group-9-221oxM">
+                                <button type="submit" class="login-n5z8fq">LOGIN</button>
+                            </div>
+                            <div class="frame-6-221oxM">
+                                <!-- Sign-up and Admin Login Options -->
+                                <a href="{% url 'signup' %}" class="sign-up-RtgI4o inter-light-william-24px" >sign-up</a>
+                                <!-- Put under div as css didnt work for the hyperlink-->
+                                <div class = "admin-login-RtgI4o">
+                                    <a href="{% url 'admin' %}" class=" inter-light-william-24px">admin login</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+                
+                <!-- NavBar -->
+                <img class="rectangle-4-MzyH1D" src="{% static '/images/navBar.svg' %}" alt="Rectangle 4">
+                <img class="skbau-logos_white-2-MzyH1D" src="{% static 'images/logo.png' %}" alt="SKBAU-logos_white 2">
+                <img class="group-MzyH1D" src="{% static '/images/mtPeak.png' %}" alt="Group">
             </div>
-        </form>
-        
-        <!-- NavBar -->
-        <img class="rectangle-4-MzyH1D" src="{% static '/images/navBar.svg' %}" alt="Rectangle 4">
-        <img class="skbau-logos_white-2-MzyH1D" src="{% static 'images/logo.png' %}" alt="SKBAU-logos_white 2">
-        <img class="group-MzyH1D" src="{% static '/images/mtPeak.png' %}" alt="Group">
-    </div>
-</div>
-{% endblock %}
+        </div>
+    </body>
+</html>
