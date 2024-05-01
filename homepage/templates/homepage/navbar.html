@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <!-- Local CSS file -->
+    <link rel="stylesheet" href="{% static 'homepage/css/index.css' %}">
+
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Your content goes here -->
+    <div class="banner">
+        <div class="img-container">
+          <!-- Computer Icon Image -->
+          <img src="{% static 'images/computer_icon.png' %}" alt="">
+        </div>
+        <!-- Navigation Bar Container -->
+        <div class="navbar">
+          <nav>
+            <a href="#home">{% url 'home'%}</a>
+            <a href="#login">{% url 'login'%}</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </div>
+      </div>
+</body>
+</html>
+   

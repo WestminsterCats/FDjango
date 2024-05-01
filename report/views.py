@@ -12,7 +12,14 @@ from reportlab.lib import colors
 import io
 
 @login_required
-def report_view(request):
+def report(request):
+    if request.user.is_superuser:
+        return render(request, 'report.html')
+    else:
+        # http response saying error 403 acess denied
+        return HttpResponse('403 Error: Access Denied')
+
+def download(request):
     # Create a file-like buffer to receive PDF data
     buffer = io.BytesIO()
 
