@@ -45,7 +45,7 @@ def download(request):
     ]
     for item in Item.objects.all():
         if item not in [booking.item for booking in current_bookings]:
-            report_content.append(f"- {item.name} ({item.itemtype.type})")
+            report_content.append(f"- {item.name} ({item.itemtype.type} - Quantity: {item.quantity})")
 
     report_content.extend([
         "",

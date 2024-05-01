@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-    background-color: #4CAF50;
+    background-color: #436f6f;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -57,11 +57,11 @@ h1 {
     margin-top: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: #436f6f;
     color: white;
     cursor: pointer;
 }
 
 .buttons button:hover {
-    background-color: #45a049;
+    background-color: #436f6f;
 }
