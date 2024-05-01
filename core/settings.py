@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'userdashboard',
     'equipment',
     'cart',
+    'currentholdings',
 ]
 
 MIDDLEWARE = [

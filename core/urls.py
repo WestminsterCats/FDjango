@@ -28,4 +28,5 @@ urlpatterns = [
     path("userdashboard/", include("userdashboard.urls")),
     path("equipment/", include("equipment.urls")),
     path("cart/", include("cart.urls")),
+    path("currentholdings/", include("currentholdings.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
