@@ -13,7 +13,7 @@ def login_user(request):
         if user is not None and user.is_active:
             login(request, user)
             messages.success(request, 'User logged in')
-            return redirect('home')  # replace 'home' with the name of your home view
+            return redirect('index')
         else:
             if user is None:
                 error_message = 'Error logging in user, user does not exist.'

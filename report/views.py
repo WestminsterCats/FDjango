@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse
 from django.contrib.auth.decorators import login_required
-from login.models import booking, iscurrent, isoverdue, item, itemlocation, itemstatus, itemtype, reservedstatus
+from equipment.models import Booking, IsCurrent, IsOverdue, Item, ItemLocation, ItemStatus, ItemType, ReservedStatus
 
 
 # Django report system using reportlab
@@ -37,14 +37,14 @@ def download(request):
     p.setFont("Helvetica", 12)
 
    # Fetch data from the databases
-    bookings = booking.objects.all()
-    current_items = iscurrent.objects.filter(status=True)
-    overdue_items = isoverdue.objects.filter(status=True)
-    all_items = item.objects.all()
-    item_locations = itemlocation.objects.all()
-    item_statuses = itemstatus.objects.all()
-    item_types = itemtype.objects.all()
-    reserved_statuses = reservedstatus.objects.all()
+    bookings = Booking.objects.all()
+    current_items = IsCurrent.objects.filter(status=True)
+    overdue_items = IsOverdue.objects.filter(status=True)
+    all_items = Item.objects.all()
+    item_locations = ItemLocation.objects.all()
+    item_statuses = ItemStatus.objects.all()
+    item_types = ItemType.objects.all()
+    reserved_statuses = ReservedStatus.objects.all()
 
     # Prepare the report content
     report_content = [

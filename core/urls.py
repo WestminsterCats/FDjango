@@ -26,4 +26,5 @@ urlpatterns = [
     path('report/', include('report.urls')),
     path('homepage/', include('homepage.urls')),
     path("userdashboard/", include("userdashboard.urls")),
+    path("equipment/", include("equipment.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

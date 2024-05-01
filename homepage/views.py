@@ -7,3 +7,6 @@ def home(request):
 
 def navbar(request):
     return render(request, 'homepage/navbar.html')
+
+def login(request):
+    return render(request, 'login/login.html')

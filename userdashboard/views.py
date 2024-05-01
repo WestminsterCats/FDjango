@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from django.urls import reverse, reverse_lazy
 # Create your views here.
 from django.http import HttpResponse
+
 @login_required
 def index(request):
     user = request.user
@@ -12,18 +13,17 @@ def index(request):
         'user' : user
     }
 
-    return render(request, 'userDashBoard.html',context)
+    return render(request, 'userdashboard/userdashboard.html',context)
 
 def logout_view(request):
-    logout(request)
-    return redirect(reverse_lazy('login/'))
+    return logout(request)
 
 #to be filled out with the rest of the pages
-def page1(request):
-    return render(request, 'userDashBoard.html')
+def equipment(request):
+    return redirect(reverse_lazy('equipment/'))
 
-def page2(request):
-    return render(request, 'your_app_name/page2.html')
+def reservations(request):
+    return redirect('/equipment/reservations')
 
 def page3(request):
     return render(request, 'your_app_name/page3.html')

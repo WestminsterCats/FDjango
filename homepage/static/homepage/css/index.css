@@ -56,7 +56,7 @@ html, body {
   .body{
     display: flex;
     flex-direction: row;
-    background-image: url("../images/mountain.jpeg");
+    background-image: url("../../images/mountain.jpeg");
     background-size: cover;
     height: calc(100% - 80px);
     overflow: auto;

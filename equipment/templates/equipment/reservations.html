@@ -1,0 +1,131 @@
+{%extends "equipment/main.html"%}
+
+{% block content %}
+
+<!-- Style -->
+
+<style>
+    .table-container {
+        margin: 20px;
+    }
+    .table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .header-row {
+        display: table-row;
+        font-weight: bold;
+        background-color: #436f6f;
+        color: white;
+    }
+    .row {
+        display: table-row;
+    }
+    .row:nth-child(even) {
+        background-color: #c9c9c991;
+    }
+    .cell {
+        display: table-cell;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+    #search-input {
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+</style>
+
+<!-- Table -->
+
+<input type="text" id="search-input" placeholder="Search...">
+<div class="table-container">
+    <h1>Reservations</h1>
+    <div class="table">
+        <div class="row header-row">
+            <div class="cell" onclick="sortTable(0)">Booking ID</div>
+            <div class="cell" onclick="sortTable(1)">User</div>
+            <div class="cell" onclick="sortTable(2)">Device Name</div>
+            <div class="cell" onclick="sortTable(3)">Is Current?</div>
+            <div class="cell" onclick="sortTable(4)">Is Overdue?</div>
+            <div class="cell" onclick="sortTable(5)">Status</div>
+            <div class="cell" onclick="sortTable(6)">Reserved Date</div>
+            <div class="cell" onclick="sortTable(7)">Return Date</div>
+        </div>
+        {% for item in item %}   <!-- Iterate through all items -->
+            {% if item.user.username == request.user.username %}   <!-- Only show items that the currently logged in user has reserved -->
+                <div class="row">
+                    <div class="cell">{{ item.id }}</div>
+                    <div class="cell">{{ item.user }}</div>
+                    <div class="cell"> 
+                        {% if item.isCurrent.isCurrent == "No" %}  <!-- If the reservation is not current, it's a past holding, which means the user can click it to return to the item page and reserve it. -->
+                            <a href="{% url 'itempage' item.item.id %}">{{ item.item.name }}</a>
+                        {% else %}
+                            {{ item.item.name }}
+                        {% endif %}
+                    </div>
+                    <div class="cell">{{ item.isCurrent }}</div>
+                    <div class="cell">{{ item.isOverdue }}</div>
+                    <div class="cell">{{ item.reservedStatus }}</div>
+                    <div class="cell">{{ item.reservation_date }}</div>
+                    <div class="cell">{{ item.return_date }}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Search functionality -->
+
+<script>
+    document.getElementById('search-input').addEventListener('input', function () {
+        var filter = this.value.toUpperCase();
+        var rows = document.querySelectorAll('.row');
+        rows.forEach(function(row) {
+            if (!row.classList.contains('header-row')) { // Exclude header row from search
+                var cells = row.querySelectorAll('.cell');
+                var found = false;
+                cells.forEach(function(cell) {
+                    if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                    }
+                });
+                if (found) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
+
+<!-- Sorting functionality -->
+
+<script>
+    function sortTable(columnIndex) {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.querySelector('.table');
+        switching = true;
+        while (switching) {
+            switching = false;
+            rows = table.querySelectorAll('.row');
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].querySelectorAll('.cell')[columnIndex].textContent.trim();
+                y = rows[i + 1].querySelectorAll('.cell')[columnIndex].textContent.trim();
+                if (x.toLowerCase() > y.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
+</script>
+
+
+{% endblock content %}
