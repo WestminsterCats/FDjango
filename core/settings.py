@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'login',
     'report',
     'homepage',
+    'userdashboard',
 ]
 
 MIDDLEWARE = [

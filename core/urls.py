@@ -25,4 +25,5 @@ urlpatterns = [
     path('login/', include('django.contrib.auth.urls')),
     path('report/', include('report.urls')),
     path('homepage/', include('homepage.urls')),
+    path("userdashboard/", include("userdashboard.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
