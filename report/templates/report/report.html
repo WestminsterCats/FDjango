@@ -1,48 +1,98 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inventory Report</title>
+    <!--Taken the css from the admin panel -->
+    <link rel="stylesheet" href="{%static 'admin/css/base.css'%}" />
+    <link rel="stylesheet" href="{%static 'admin/css/dark_mode.css'%}" />
+    <script src="{%static 'admin/js/theme.js'%}" defer=""></script>
+    <link rel="stylesheet" href="{%static 'admin/css/nav_sidebar.css'%}" />
+    <script src="{%static 'admin/js/nav_sidebar.js' %}" defer=""></script>
+    <link rel="stylesheet" href="{%static '/admin/css/dashboard.css'%}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static '/admin/css/responsive.css' %}" />
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .download-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .download-link:hover {
-            background-color: #0056b3;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212; /* Change background color to white */
+        color: #000; /* Change text color to black */
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #222; /* Change background color to dark grey */
+        color: #fff; /* Change text color to white */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #f5dd5d; /* Change heading color to dark green */
+      }
+      .download-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #417690; /* Change button background color to dark green */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .download-link:hover {
+        background-color: #4ac1f7; /* Darken button color on hover */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!--Taken the header from the admin panel -->
+    <header id="header">
+      <div id="branding">
+        <div id="site-name">
+          <a href="/admin/">Django administration</a>
+        </div>
+      </div>
+
+      <div id="user-tools">
+        Welcome,
+        <strong>{{ user.username }}</strong>.
+
+        <a href="/">View site</a> /
+
+        
+        <a href="/admin/password_change/">Change password</a> /<form id="logout-form" method="post" action="/admin/logout/">
+            {% csrf_token %}"
+            <button type="submit">Log out</button>
+        </form>
+
+        <button class="theme-toggle">
+          <div class="visually-hidden theme-label-when-auto">Toggle theme (current theme: auto)</div>
+          <div class="visually-hidden theme-label-when-light">Toggle theme (current theme: light)</div>
+          <div class="visually-hidden theme-label-when-dark">Toggle theme (current theme: dark)</div>
+          <svg aria-hidden="true" class="theme-icon-when-auto">
+            <use xlink:href="#icon-auto"></use>
+          </svg>
+          <svg aria-hidden="true" class="theme-icon-when-dark">
+            <use xlink:href="#icon-moon"></use>
+          </svg>
+          <svg aria-hidden="true" class="theme-icon-when-light">
+            <use xlink:href="#icon-sun"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <!-- Download section for the report -->
     <div class="container">
-        <h1>Inventory Report</h1>
-        <p>Click the button below to download the inventory report.</p>
-        <a href="{% url 'download' %}" class="download-link" download>Download Report</a>
+      <h1>Inventory Report</h1>
+      <p>Click the button below to download the inventory report.</p>
+      <a href="{% url 'download' %}" class="download-link" download>Download Report</a>
     </div>
-</body>
+  </body>
 </html>
