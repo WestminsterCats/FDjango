@@ -2,9 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Inter:500,300,800,300italic");
 
-/* The following line is used to measure usage of this code. You can remove it if you want. */
-@import url("https://px.animaapp.com/660409fb98d63f4f05f69855.660409fc98d63f4f05f69858.DXK3tgo.hch.png");
-
 
 .screen textarea:focus,
 .screen input:focus {
@@ -123,10 +120,10 @@ input:focus {
 
 .frame-6 {
     background-color: #ffffff;
-    height: 1080px;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
     position: relative;
-    width: 1920px;
 }
 
 .frame-6 .rectangle-1-MzyH1D {
