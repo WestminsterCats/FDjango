@@ -1,0 +1,859 @@
+
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400");
+
+        /* The following line is used to measure usage of this code. You can remove it if you want. */
+        @import url("https://px.animaapp.com/660409fb98d63f4f05f69855.660409fc98d63f4f05f69858.DXK3tgo.hch.png");
+
+
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --alto: #d9d9d9;
+            --alto-2: #d9d9d9bf;
+            --black: #000000;
+
+            --font-size-l: 48px;
+            --font-size-m: 36px;
+            --font-size-s: 28px;
+            --font-size-xl: 50px;
+            --font-size-xs: 26px;
+            --font-size-xxl: 75px;
+            --font-size-xxxl: 82px;
+
+            --font-family-work_sans: "Work Sans", Helvetica;
+        }
+
+        .worksans-light-black-36px {
+            color: var(--black);
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .worksans-normal-black-50px {
+            color: var(--black);
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-xl);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .worksans-normal-black-28px {
+            color: var(--black);
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        :root {}
+
+
+        /* screen - user-dashboard */
+
+        .user-dashboard {
+            background-color: #ffffff;
+            height: 2687px;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1920px;
+        }
+
+        .user-dashboard .group-37-YP10aS {
+            background-color: transparent;
+            height: 149px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1922px;
+        }
+
+        .user-dashboard .navbar-jOU7fs {
+            align-items: center;
+            background-color: #436f6f;
+            display: flex;
+            gap: 467px;
+            left: 0px;
+            padding: 24px 74px;
+            position: absolute;
+            top: 0px;
+            width: 1920px;
+        }
+
+        .user-dashboard .logo-UiRxrZ {
+            background-color: transparent;
+            height: 101px;
+            object-fit: cover;
+            position: relative;
+            width: 101px;
+        }
+
+        .user-dashboard .group-17-UiRxrZ {
+            background-color: transparent;
+            height: 87px;
+            position: relative;
+            width: 715px;
+        }
+
+        .user-dashboard .title-Dh2QQ3 {
+            background-color: transparent;
+            color: #ffffff;
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-xxxl);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 0px;
+            white-space: nowrap;
+            width: 713px;
+        }
+
+        .user-dashboard .vector-2-jOU7fs {
+            background-color: transparent;
+            height: 53px;
+            left: 1806px;
+            position: absolute;
+            top: 50px;
+            width: 27px;
+        }
+
+        .user-dashboard .ellipse-1-jOU7fs {
+            background-color: transparent;
+            height: 90px;
+            left: 1774px;
+            position: absolute;
+            top: 32px;
+            width: 90px;
+        }
+
+        .user-dashboard .logout-jOU7fs {
+            background-color: transparent;
+            color: #fbfbfe;
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 1604px;
+            letter-spacing: -1.92px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 49px;
+            width: 155px;
+        }
+
+        .user-dashboard .manage-password-email-and-mobile-number-YP10aS {
+            background-color: transparent;
+            height: auto;
+            left: 150px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 1457px;
+            width: 800px;
+        }
+
+        .user-dashboard .account-security-YP10aS {
+            background-color: transparent;
+            color: var(--black);
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-xxl);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 150px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 1351px;
+            white-space: nowrap;
+            width: 629px;
+        }
+
+        .user-dashboard .group-18-YP10aS {
+            background-color: transparent;
+            height: 300px;
+            left: 150px;
+            position: absolute;
+            top: 600px;
+            width: 1508px !important;
+        }
+
+        .user-dashboard .rectangle-1-adsUXr {
+            background-color: var(--alto);
+            width: 750px;
+        }
+
+        .user-dashboard .orders-adsUXr {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 50px;
+            white-space: nowrap;
+            width: 292px;
+        }
+
+        .user-dashboard .track-return-cancel-adsUXr {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 124px;
+            width: 427px;
+        }
+
+        .user-dashboard .online-shopping-adsUXr {
+            background-color: transparent;
+            height: 187px;
+            left: 56px;
+            position: absolute;
+            top: 50px;
+            width: 187px;
+        }
+
+        .user-dashboard .group-19-YP10aS {
+            background-color: transparent;
+            height: 300px;
+            left: 1050px;
+            position: absolute;
+            top: 600px;
+            width: 754px;
+        }
+
+        .user-dashboard .rectangle-1-sDWoJz {
+            background-color: var(--alto-2);
+            width: 750px;
+        }
+
+        .user-dashboard .shopping-cart-sDWoJz {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 50px;
+            white-space: nowrap;
+            width: 413px;
+        }
+
+        .user-dashboard .check-whats-in-your-sDWoJz {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 124px;
+            width: 427px;
+        }
+
+        .user-dashboard .group-36-YP10aS {
+            background-color: transparent;
+            height: 300px;
+            left: 150px;
+            position: absolute;
+            top: 225px;
+            width: 1654px;
+            cursor: pointer;
+        }
+
+        .user-dashboard .rectangle-1-hGxxyi {
+            background-color: var(--alto-2);
+            width: 1650px;
+
+        }
+
+        .user-dashboard .browse-products-hGxxyi {
+            background-color: transparent;
+            height: auto;
+            left: 375px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 90px;
+            white-space: nowrap;
+            width: 1146px;
+        }
+
+        .user-dashboard .find-the-gear-you-ne-hGxxyi {
+            background-color: transparent;
+            height: auto;
+            left: 375px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 167px;
+            white-space: nowrap;
+            width: 1185px;
+        }
+
+        .user-dashboard .group-20-YP10aS {
+            background-color: transparent;
+            height: 300px;
+            left: 150px;
+            position: absolute;
+            top: 975px;
+            width: 804px;
+        }
+
+        .user-dashboard .rectangle-1-WxglxK {
+            background-color: var(--alto-2);
+            width: 750px;
+        }
+
+        .user-dashboard .upcoming-reservations-WxglxK {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 50px;
+            white-space: nowrap;
+            width: 533px;
+        }
+
+        .user-dashboard .check-your-reservations-WxglxK {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 179px;
+            width: 427px;
+        }
+
+        .user-dashboard .group-21-YP10aS {
+            background-color: transparent;
+            height: 300px;
+            left: 1050px;
+            position: absolute;
+            top: 975px;
+            width: 754px;
+        }
+
+        .user-dashboard .rectangle-1-oxyXvv {
+            background-color: var(--alto-2);
+            width: 750px;
+        }
+
+        .user-dashboard .current-holdings-oxyXvv {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 50px;
+            white-space: nowrap;
+            width: 427px;
+        }
+
+        .user-dashboard .check-what-you-shoul-oxyXvv {
+            background-color: transparent;
+            height: auto;
+            left: 267px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 124px;
+            width: 427px;
+        }
+
+        .user-dashboard .group-35-YP10aS {
+            background-color: transparent;
+            height: 973px;
+            left: 300px;
+            position: absolute;
+            top: 1577px;
+            width: 1350px;
+        }
+
+        .user-dashboard .rectangle-4-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 223px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1350px;
+        }
+
+        .user-dashboard .rectangle-5-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 450px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1350px;
+        }
+
+        .user-dashboard .rectangle-6-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 750px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1050px;
+        }
+
+        .user-dashboard .rectangle-8-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 748px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1350px;
+        }
+
+        .user-dashboard .rectangle-9-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 973px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 1350px;
+        }
+
+        .user-dashboard .rectangle-3-vhxgPb {
+            background-color: transparent;
+            border: 25px solid;
+            border-color: var(--alto);
+            height: 973px;
+            left: 1027px;
+            position: absolute;
+            top: 0px;
+            width: 323px;
+        }
+
+        .user-dashboard .group-34-vhxgPb {
+            background-color: transparent;
+            height: 75px;
+            left: 75px;
+            position: absolute;
+            top: 75px;
+            width: 1202px;
+        }
+
+        .user-dashboard .name-jhon-doe-EdWV5r {
+            background-color: transparent;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 0px;
+            width: 450px;
+        }
+
+        .user-dashboard .group-27-EdWV5r {
+            background-color: transparent;
+            height: 74px;
+            left: 1050px;
+            position: absolute;
+            top: 0px;
+            width: 150px;
+        }
+
+        .user-dashboard .group-33-vhxgPb {
+            background-color: transparent;
+            height: 81px;
+            left: 75px;
+            position: absolute;
+            top: 294px;
+            width: 1202px;
+        }
+
+        .user-dashboard .emailw1234567mywestminsteracuk-AQbrKs {
+            background-color: transparent;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 0px;
+            width: 900px;
+        }
+
+        .user-dashboard .group-26-AQbrKs {
+            background-color: transparent;
+            height: 74px;
+            left: 1050px;
+            position: absolute;
+            top: 7px;
+            width: 150px;
+        }
+
+        .user-dashboard .group-31-vhxgPb {
+            background-color: transparent;
+            height: 79px;
+            left: 75px;
+            position: absolute;
+            top: 823px;
+            width: 1202px;
+        }
+
+        .user-dashboard .password-4ksQdQ {
+            background-color: transparent;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 4px;
+            width: 825px;
+        }
+
+        .user-dashboard .group-28-4ksQdQ {
+            background-color: transparent;
+            height: 74px;
+            left: 1050px;
+            position: absolute;
+            top: 0px;
+            width: 150px;
+        }
+
+        .user-dashboard .group-30-vhxgPb {
+            background-color: transparent;
+            height: 140px;
+            left: 75px;
+            position: absolute;
+            top: 527px;
+            width: 1202px;
+        }
+
+        .user-dashboard .primary-mobile-numbe-DNgAsZ {
+            background-color: transparent;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 0px;
+            width: 900px;
+        }
+        .user-dashboard .span1-nfWQ29 {
+            color: var(--black);
+            font-family: var(--font-family-work_sans);
+            font-size: var(--font-size-xs);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .user-dashboard .group-25-DNgAsZ {
+            background-color: transparent;
+            height: 74px;
+            left: 1050px;
+            position: absolute;
+            top: 31px;
+            width: 150px;
+        }
+
+        .user-dashboard .reserve-YP10aS {
+            background-color: transparent;
+            height: 200px;
+            left: 198px;
+            position: absolute;
+            top: 1019px;
+            width: 200px;
+        }
+
+        .user-dashboard .holding-box-YP10aS {
+            background-color: transparent;
+            height: 200px;
+            left: 1100px;
+            position: absolute;
+            top: 1034px;
+            width: 200px;
+        }
+
+        .user-dashboard .add-to-basket-YP10aS {
+            background-color: transparent;
+            height: 179px;
+            left: 272px;
+            position: absolute;
+            top: 273px;
+            width: 179px;
+        }
+
+        .user-dashboard .buy {
+            background-color: transparent;
+            height: 176px;
+            left: 1100px;
+            position: absolute;
+            top: 659px;
+            width: 176px;
+        }
+
+        .user-dashboard .edit {
+            background-color: transparent;
+            height: auto;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 0px;
+            white-space: nowrap;
+            width: 57px;
+        }
+
+        .user-dashboard .group-15 {
+            background-color: transparent;
+            height: 32px;
+            left: 47px;
+            position: absolute;
+            top: 21px;
+            width: 59px;
+        }
+
+        .user-dashboard .rectangle-1 {
+            height: 300px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            cursor: pointer;
+        }
+
+        .user-dashboard .rectangle-15 {
+            background-color: transparent;
+            border: 2px solid;
+            border-color: var(--alto);
+            border-radius: 10px;
+            height: 74px;
+            left: 0px;
+            position: absolute;
+            top: 0px;
+            width: 150px;
+        }
