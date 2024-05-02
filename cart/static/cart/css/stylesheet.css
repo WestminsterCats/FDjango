@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-    background-color: #4CAF50;
+    background-color: #436f6f;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -41,13 +41,13 @@ h1 {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: #436f6f;
     color: white;
     cursor: pointer;
 }
 
 .actions button:hover {
-    background-color: #45a049;
+    background-color: #436f6f;
 }
 
 span {
@@ -60,7 +60,7 @@ span {
     width: calc(100% - 40px);
     margin: 0 20px 20px;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #436f6f;
     color: white;
     border: none;
     border-radius: 5px;
@@ -68,5 +68,5 @@ span {
 }
 
 #checkoutButton:hover {
-    background-color: #45a049;
+    background-color: #436f6f;
 }
