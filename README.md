@@ -8,7 +8,6 @@ Welcome to the Westminster University Lending System! This Django project aims t
 - **Item Management**: Administrators can add, edit, and remove items available for lending.
 - **Loan Management**: Users can request loans, view their loan history, and return items.
 - **Admin Dashboard**: Administrators have access to a dashboard to oversee lending activities, manage users, and generate reports.
-- **Email Notifications**: Users receive notifications for loan requests, reminders for overdue items, and confirmations for returns.
 
 ## Installation
 
